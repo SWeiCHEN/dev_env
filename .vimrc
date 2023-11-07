@@ -174,4 +174,5 @@ Plug 'zivyangll/git-blame.vim'
 " plugin for golang
 Plug 'fatih/vim-go', {'tag': '*' }
 Plug 'dgryski/vim-godef'
+Plug 'yaegassy/coc-ruff', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
