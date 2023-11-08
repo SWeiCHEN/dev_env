@@ -72,6 +72,9 @@ let g:lightline = {
        \   'left': [ [ 'mode', 'paste' ],
        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
        \ },
+       \ 'component': {
+       \   'filename': '%F'
+       \ },
        \ 'component_function': {
        \   'gitbranch': 'gitbranch#name'
        \ },
