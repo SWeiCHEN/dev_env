@@ -53,6 +53,7 @@ set bg=dark
 execute pathogen#infect()
 au VimEnter *  NERDTree "automatic open NERDtree when open vim
 au VimEnter * wincmd p "move cursor to file
+"let NERDTreeShowHidden=1 "show hidden file
 
 " -----NERD FONT-----
 set guifont=Ubuntu\ Mono\ Nerd\ Font\ 11
