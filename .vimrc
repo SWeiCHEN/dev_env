@@ -80,7 +80,6 @@ let g:lightline = {
        \ },
        \ }
 
-
 " exuberant-ctags
 set tags=tags;
 set autochdir
@@ -162,6 +161,15 @@ let g:indent_guides_enable_on_vim_startup = 1
 " ~/.vim/plugged/vimspector/gadgets/macos/
 let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'CodeLLDB' ]
 let g:vimspector_enable_mappings='VISUAL_STUDIO'
+
+" coc.nvim need vim version >= 8.2
+let g:coc_disable_startup_warning = 1
+
+" coc GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " ---------------------- vim-plug-------------------------
 call plug#begin('~/.vim/plugged')
