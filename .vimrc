@@ -36,6 +36,7 @@ endif
 " backspace suddenly breakdown, only can delete new char
 set backspace=indent,eol,start
 
+
 filetype plugin indent on
 filetype plugin on
 
@@ -53,7 +54,6 @@ set bg=dark
 execute pathogen#infect()
 au VimEnter *  NERDTree "automatic open NERDtree when open vim
 au VimEnter * wincmd p "move cursor to file
-"let NERDTreeShowHidden=1 "show hidden file
 
 " -----NERD FONT-----
 set guifont=Ubuntu\ Mono\ Nerd\ Font\ 11
@@ -77,7 +77,7 @@ let g:lightline = {
        \   'filename': '%F'
        \ },
        \ 'component_function': {
-       \   'gitbranch': 'gitbranch#name'
+       \   'gitbranch': 'gitbranch#name',
        \ },
        \ }
 
@@ -183,8 +183,8 @@ Plug 'puremourning/vimspector'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'zivyangll/git-blame.vim'
+Plug 'yaegassy/coc-ruff', {'do': 'yarn install --frozen-lockfile'}
 " plugin for golang
 Plug 'fatih/vim-go', {'tag': '*' }
 Plug 'dgryski/vim-godef'
-Plug 'yaegassy/coc-ruff', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
