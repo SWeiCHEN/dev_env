@@ -184,6 +184,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'zivyangll/git-blame.vim'
 Plug 'yaegassy/coc-ruff', {'do': 'yarn install --frozen-lockfile'}
+Plug 'preservim/nerdtree',
 " plugin for golang
 Plug 'fatih/vim-go', {'tag': '*' }
 Plug 'dgryski/vim-godef'
