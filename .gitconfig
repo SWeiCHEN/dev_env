@@ -7,7 +7,7 @@
 	name = Sheng-Wei
 	email = swai6374@gmail.com
 [core]
-	excludesfile = /Users/wei/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [alias]
     co = checkout
     br = branch

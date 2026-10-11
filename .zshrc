@@ -1,5 +1,7 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -115,13 +117,36 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ########################### personal setting #################################
-alias pip='pip3'
-alias python='python3'
-
 # Using logo-ls 
-alias ls="logo-ls"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+alias ls="eza --icons"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+[[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
+
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+export PYENV_ROOT="$HOME/.pyenv"
+if command -v pyenv >/dev/null 2>&1; then
+    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+fi
+
+# Force pyenv to take precedence
+if command -v pyenv >/dev/null 2>&1; then
+    export PATH="$HOME/.pyenv/shims:$PATH"
+    eval "$(pyenv init - --no-rehash)"
+fi
+
+# JAVA PATH
+# java 26, conflict with pyspark
+if [[ "$OSTYPE" == darwin* ]] && [[ -x /usr/libexec/java_home ]]; then
+    JAVA_HOME=$(/usr/libexec/java_home -v 21 2>/dev/null || true)
+    if [[ -n "$JAVA_HOME" ]]; then
+        export JAVA_HOME
+        export PATH="$JAVA_HOME/bin:$PATH"
+    fi
+fi
